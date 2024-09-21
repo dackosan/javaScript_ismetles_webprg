@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="java.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3>Feladat:</h3>
+        <p>currentHours = 14;</p>
+        <p>currentMinutes = 34;</p>
+        <p>currentSeconds = 42;</p>
+        <p>Write a program that prints the remaining seconds (as an integer) from a</p>
+        <p>day if the current time is represented by the variables above</p>
+    </div>
+
+    <div>
+        <h3>Megoldás:</h3>
+        <p id="solution"></p>
+    </div>
+
+    <script>
+        const currentSeconds = 42;
+        const currentMinutes = 34;
+        const currentHours = 14;
+        const secondInADay = 86400;
+
+        let currentSecondsSum = currentSeconds + (currentMinutes*60) + (currentHours*3600);
+
+        let remainingSeconds = secondInADay - currentSecondsSum;
+        document.getElementById("solution").innerHTML = "Remaining seconds from a day : " + remainingSeconds;
+    </script>
+</body>
+</html>

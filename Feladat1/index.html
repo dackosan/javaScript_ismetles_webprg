@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="java.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3>Feladat:</h3>
+        <p>Write a program that stores 3 sides of a cuboid as variables (doubles)</p>
+        <p>The program should write the surface area and volume of the cuboid.</p>
+        <p>Set the 3 sides to 10.4, 13.5, 8.2 and your program should</p>
+        <p>produce the following output:</p>
+        <p>Surface Area: 672.76</p>
+        <p>Volume: 1151.28</p>
+    </div>
+
+    <div>
+        <h3>Megoldás:</h3>
+        <p id="solutionVolume"></p>
+        <p id="solutionSurface"></p>
+    </div>
+
+    <script>
+        const side1 = 10.4;
+        const side2 = 13.5;
+        const side3 = 8.2;
+
+        let volume = side1 * side2 * side3;
+        document.getElementById("solutionVolume").innerHTML = "Volume : " + volume;
+
+        let surface = (side1 * side2 * 2) + (side1 * side3 * 2) + (side3 * side2 * 2);
+        document.getElementById("solutionSurface").innerHTML = "Surface : " + surface;
+    </script>
+</body>
+</html>

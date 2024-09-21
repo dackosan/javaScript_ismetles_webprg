@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="java.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3>Feladat:</h3>
+        <p>Create a program that takes a numeric score as input and prints the corresponding letter grade (A, B, C, D, or F).</p>
+    </div>
+
+    <div>
+        <h3>Megoldás:</h3>
+        <label for="score">Your score:</label>
+        <input type="number" id="score" name="score" min="0" max="100">
+        <button onclick="gradeME()">Grade me</button>
+        <p id="finalGrade"></p>
+    </div>
+
+    <script>
+        function gradeME(){
+            let score = document.getElementById("score").value;
+
+            if( score >= 85 && score <= 100){
+                document.getElementById("finalGrade").innerHTML = "Your grade : A";
+            }
+            else if(score >= 70 && score < 85){
+                document.getElementById("finalGrade").innerHTML = "Your grade : B";
+            }
+            else if(score >= 50 && score < 70){
+                document.getElementById("finalGrade").innerHTML = "Your grade : C";
+            }
+            else if(score >= 30 && score < 50){
+                document.getElementById("finalGrade").innerHTML = "Your grade : D";
+            }
+            else if(score >= 0 && score < 30){
+                document.getElementById("finalGrade").innerHTML = "Your grade : F";
+            }
+            else{
+                document.getElementById("finalGrade").innerHTML = "I can not grade you!";
+            }
+        }
+    </script>
+</body>
+</html>
