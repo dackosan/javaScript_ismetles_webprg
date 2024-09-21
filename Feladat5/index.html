@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="java.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h3>Feladat:</h3>
+        <p>Write a program that checks if a given year is a leap year or not.</p>
+        <p>Leap years:</p>
+        <p>2000, 2004, 1904, 2024, 1600</p>
+        <p>Not leap years:</p>
+        <p>1900, 1929, 1933, 2023, 1867</p>
+    </div>
+
+    <div>
+        <h3>Megoldás:</h3>
+        <label for="year">Enter a year:</label>
+        <input type="number" id="year" name="year">
+        <button onclick="Calculate()">Calculate</button>
+        <p id="isItLeapYear"></p>
+    </div>
+
+    <script>
+        function Calculate(){
+            let year =  document.getElementById("year").value;
+
+            if (year % 100 == 0){
+                if(year % 400 == 0){
+                    document.getElementById("isItLeapYear").innerHTML = "It is a leap year!";
+                }
+                else{
+                    document.getElementById("isItLeapYear").innerHTML = "It is not a leap year!";
+                }
+                
+            }
+            else if(year % 4 == 0){
+                document.getElementById("isItLeapYear").innerHTML = "It is a leap year!";
+            }
+            else{
+                document.getElementById("isItLeapYear").innerHTML = "It is not a leap year!";
+            }
+        }
+    </script>
+</body>
+</html>
