@@ -1,11 +1,9 @@
 function Print(){
     let number = document.getElementById("inputNumber").value;
-    let index = 1;
     let result = 1;
 
-    while (index != number){
-        result *= index;
-        index++;
+    for(let i = 1; i <= number; i++){
+        result *= i;
     }
 
     document.getElementById("solution").innerHTML = "Result : " + result;
