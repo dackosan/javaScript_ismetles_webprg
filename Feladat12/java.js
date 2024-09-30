@@ -1,28 +1,31 @@
 window.onload = function(){
-    let count = 0;
+    let index = 1;
+    let counter = 0;
 
-    for (let i = 1; i <= 100; i++) {
-        if (i % 3 == 0 && count == 3) {
-            document.getElementById("solution").innerHTML += i + " ";
-            console.log(i);
-            count = 0;
+
+    for (let i = 1; i <= 100; i++)
+    {
+        if(i % 3 == 0)
+        {
+            if (index % 2 == 0 && index % 3 != 0)
+            {
+                document.getElementById("solution").innerHTML += `${i}, `;
+            }
+            else if (index % 5 == 0 && index % 3 != 0)
+            {
+                document.getElementById("solution").innerHTML += `${i}, `;
+            }
+            else if (index % (11 + counter*6) == 0)
+            {
+                document.getElementById("solution").innerHTML += `${i}, `;
+                counter++;
+            }
+
+            index++;
         }
-        else if(i % 3 == 0 && count == 2){
-            document.getElementById("solution").innerHTML += i + " ";
-            console.log(i);
-            count = 0;
-        }
-        else if(i % 3 == 0 && count == 1){
-            document.getElementById("solution").innerHTML += i + " ";
-            console.log(i);
-            count = 0;
-        }
-        else if(i % 3 != 0){
-            document.getElementById("solution").innerHTML += i + " ";
-            console.log(i);
-        }
-        else{
-            count++;
+        else
+        {
+            document.getElementById("solution").innerHTML += `${i}, `;
         }
     }
 }

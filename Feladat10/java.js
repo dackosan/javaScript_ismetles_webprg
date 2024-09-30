@@ -1,21 +1,20 @@
-function Paint(){
-    let number = document.getElementById("inputNumber").value;
+document.getElementById('drawButton').addEventListener('click', function() {
+    const size = parseInt(document.getElementById('size').value);
+    if (size < 1) {
+        alert('Please enter a number greater than 0.');
+        return;
+    }
 
-    /*oszlop*/
-    for(let i = 0; i < number; i++){
-        if(i > 1){
-            for(let o = 0; o < number; o++){
-                if(o == 0 || o == i || o == number){
-                    ocument.getElementById("solution").innerHTML += "%";
-                }
-                else{
-                    ocument.getElementById("solution").innerHTML += " ";
-                }
+    let output = '';
+    for (let i = 0; i < size; i++) {
+        for (let j = 0; j < size; j++) {
+            if (i === 0 || i === size - 1 || j === 0 || j === size - 1 || i === j) {
+                output += '%';
+            } else {
+                output += ' ';
             }
         }
-        for(let i = 0; i < number; i++){
-            document.getElementById("solution").innerHTML += "%";
-        }
-        document.getElementById("solution").innerHTML += "<br>";
+        output += '\n';
     }
-}
+    document.getElementById('output').textContent = output;
+});
